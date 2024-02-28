@@ -14,8 +14,27 @@
     * {
         font-family: 'Poppins';
     }
+
+    main {
+        background-image: url({{ asset('images/bg.png') }}); 
+        background-size: cover
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+    -moz-appearance: textfield;
+    }
 </style>
 <body>
-    @yield('content')
+    <main>
+        @yield('content')
+    </main>
 </body>
 </html>
