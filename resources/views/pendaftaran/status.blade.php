@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="py-16 px-32" style="height: 100vh">
-    <div class="bg-white/30 w-10 flex justify-center rounded-xl p-4 hover:bg-white/20">
+    <a href="{{ route('pendaftaran') }}" class="btn border-none bg-white/30 w-10 flex justify-center rounded-xl p-4 hover:bg-white/20">
         <img src="{{ asset('images/arrow.png') }}" width="10px" />
-    </div>
+    </a>
     <p class="text-center text-white font-bold text-4xl">Status Pendaftaran</p>
     <div class="mt-10 py-5 px-11 flex align-center justify-center border border-white rounded-xl bg-white/30 text-white">
         <div class="overflow-x-auto w-full">
@@ -26,7 +26,7 @@
                         <td>1234566789</td>
                         <td>Elemen</td>
                         <td>
-                            <button class="bg-red-500 py-1 px-4 text-white rounded-sm">Ambil</button>
+                            <button id="btn" class="bg-red-500 py-1 px-4 text-white rounded-sm">Ambil</button>
                         </td>
                     </tr>
                     <tr>
@@ -35,7 +35,7 @@
                         <td>1234566789</td>
                         <td>Rusak</td>
                         <td>
-                            <button class="bg-red-500 py-1 px-4 text-white rounded-sm">Ambil</button>
+                            <button id="btn" class="bg-red-500 py-1 px-4 text-white rounded-sm">Ambil</button>
                         </td>
                     </tr>
                     <tr>
@@ -44,7 +44,7 @@
                         <td>1234566789</td>
                         <td>Baru</td>
                         <td>
-                            <button class="bg-red-500 py-1 px-4 text-white rounded-sm">Ambil</button>
+                            <button id="btn" class="bg-red-500 py-1 px-4 text-white rounded-sm">Ambil</button>
                         </td>
                     </tr>
                 </tbody>
@@ -52,4 +52,17 @@
         </div>
     </div>
 </div>
+
+@endsection
+
+@section('addJavascript')
+<script>
+    const btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function onClick() {
+            btn.style.backgroundColor = 'grey';
+            btn.style.color = 'white';
+            btn.setAttribute("disabled", true);
+        });
+</script>
 @endsection

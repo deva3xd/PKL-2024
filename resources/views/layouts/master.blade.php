@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SI PANDU RESIK - </title>
+    <title>SI PANDU RESIK - {{ $title }}</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('images/icon.png') }}" />
     @vite('resources/css/app.css')
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,5 +36,6 @@
     <main>
         @yield('content')
     </main>
+    @yield('addJavascript')
 </body>
 </html>
