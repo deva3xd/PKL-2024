@@ -1,16 +1,16 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="py-16 px-32" style="height: 100vh">
+<div class="py-16 px-32 min-h-screen">
     <a href="{{ route('pendaftaran') }}" class="btn border-none bg-white/30 w-10 flex justify-center rounded-xl p-4 hover:bg-white/20">
         <img src="{{ asset('images/arrow.png') }}" width="10px" />
     </a>
-    <p class="text-center text-white font-bold text-4xl">Status Pendaftaran</p>
-    <div class="mt-10 py-5 px-11 flex align-center justify-center border border-white rounded-xl bg-white/30 text-white">
+    <h1 class="text-center text-white font-bold text-4xl">Status Pendaftaran</h1>
+    <div class="mt-10 py-5 px-11 flex align-center justify-center">
         <div class="overflow-x-auto w-full">
-            <table class="table border border-white text-center">
+            <table class="table text-center">
                 <!-- head -->
-                <thead class="bg-black text-white font-semibold">
+                <thead class="text-white font-bold text-base" style="background-color: #0A2C4C">
                     <tr>
                         <th>NO.</th>
                         <th>Nomor KK</th>
@@ -19,34 +19,18 @@
                         <th>Aksi</th>
                     </tr>
                 </thead>
-                <tbody class="bg-base-200">
-                    <tr>
-                        <th>1</th>
-                        <td>1234566789</td>
-                        <td>1234566789</td>
-                        <td>Elemen</td>
-                        <td>
-                            <button id="btn" class="bg-red-500 py-1 px-4 text-white rounded-sm">Ambil</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>2</th>
-                        <td>1234566789</td>
-                        <td>1234566789</td>
-                        <td>Rusak</td>
-                        <td>
-                            <button id="btn" class="bg-red-500 py-1 px-4 text-white rounded-sm">Ambil</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>3</th>
-                        <td>1234566789</td>
-                        <td>1234566789</td>
-                        <td>Baru</td>
-                        <td>
-                            <button id="btn" class="bg-red-500 py-1 px-4 text-white rounded-sm">Ambil</button>
-                        </td>
-                    </tr>
+                <tbody class="bg-base-200 text-white font-semibold" style="background-color: #07426C">
+                    @foreach ($pendaftarans as $pendaftaran)
+                        <tr>
+                            <td>{{ $loop->index + 1 }}</td>
+                            <td>{{ $pendaftaran->nokk }}</td>
+                            <td>{{ $pendaftaran->nik }}</td>
+                            <td>{{ $pendaftaran->permohonan }}</td>
+                            <td>
+                                <a onclick="confirmDelete(this)" data-url="{{route('updateStatus', ['id' => $pendaftaran->id])}}" class="btn btn-sm text-white border-none {{ $pendaftaran->status=="aktif" ? "bg-red-600 hover:bg-red-700" : "" }}" role="button" {{ $pendaftaran->status=="tidak aktif" ? "disabled" : "" }}>Ambil</a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -56,13 +40,20 @@
 @endsection
 
 @section('addJavascript')
-<script>
-    const btn = document.getElementById('btn');
-
-        btn.addEventListener('click', function onClick() {
-            btn.style.backgroundColor = 'grey';
-            btn.style.color = 'white';
-            btn.setAttribute("disabled", true);
-        });
-</script>
+    <script>
+        confirmDelete = function(button) {
+            var url = $(button).data('url');
+            swal({
+                'icon' : 'warning',
+                'title' : 'Apakah Kamu Yakin?',
+                'text' : 'Tindakan tidak dapat di ulangi!',
+                'dangermode' : true,
+                'buttons' : true
+            }).then(function(value) {
+                if(value) {
+                    window.location = url;
+                }
+            })
+        }
+    </script>
 @endsection

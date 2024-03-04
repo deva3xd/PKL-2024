@@ -21,7 +21,8 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->intended("/pendaftaran");
         } else {
-            return redirect()->intended("/")->with('message', 'ERROR');
+            alert()->error('Gagal','Username atau Password Salah!');
+            return redirect()->intended("/")->with('error', 'Username atau Password Salah');
         }
     }
 
@@ -29,6 +30,6 @@ class AuthController extends Controller
     {
         Auth::logout();
         $request->session()->flush();
-        return redirect(route('login'));
+        return redirect(route('login'))->with('success', 'Logout Successfully');
     }
 }
