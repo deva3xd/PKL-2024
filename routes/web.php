@@ -23,5 +23,6 @@ Route::middleware(['auth', 'PendaftaranMiddleware'])->group(function() {
     Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');
     Route::post('/pendaftaran', [PendaftaranController::class, 'store'])->name('storePendaftaran');
     Route::get('/status', [PendaftaranController::class, 'status'])->name('status');
-    Route::get('/status/{id}', [PendaftaranController::class, 'update'])->name('updateStatus');
+    Route::get('/status/{id}/update', [PendaftaranController::class, 'update'])->name('updateStatus');
+    Route::get('/status/{id}/delete', [PendaftaranController::class, 'delete'])->name('deleteStatus');
 });

@@ -36,11 +36,9 @@ class PendaftaranController extends Controller
     public function update(Request $request, $id)
     {
         $pendaftaran = Pendaftaran::find($id);
-        $pendaftaran->nokk = $request->input('12121');
-        $pendaftaran->nik = $request->input('909090');
-        $pendaftaran->permohonan = $request->input('email');
-        $pendaftaran->status = $request->input('tidak aktif');
+        $pendaftaran->status = "tidak aktif";
         $pendaftaran->save();
+        alert()->success('Sukses', 'Data Berhasil Diupdate!');
         return redirect()->back()->with('status','Status Updated Successfully');
     }
 

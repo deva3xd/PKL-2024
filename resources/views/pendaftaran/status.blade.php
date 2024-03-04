@@ -27,7 +27,8 @@
                             <td>{{ $pendaftaran->nik }}</td>
                             <td>{{ $pendaftaran->permohonan }}</td>
                             <td>
-                                <a onclick="confirmDelete(this)" data-url="{{route('updateStatus', ['id' => $pendaftaran->id])}}" class="btn btn-sm text-white border-none {{ $pendaftaran->status=="aktif" ? "bg-red-600 hover:bg-red-700" : "" }}" role="button" {{ $pendaftaran->status=="tidak aktif" ? "disabled" : "" }}>Ambil</a>
+                                <a onclick="confirmDelete(this)" data-url="{{route('updateStatus', ['id' => $pendaftaran->id])}}" class="btn btn-sm text-white border-none {{ $pendaftaran->status=="aktif" ? "bg-green-600 hover:bg-green-700" : "" }}" role="button" {{ $pendaftaran->status=="tidak aktif" ? "disabled" : "" }}>Ambil</a>
+                                <a onclick="confirmDelete(this)" data-url="{{route('deleteStatus', ['id' => $pendaftaran->id])}}" class="btn btn-sm text-white border-none bg-red-600 hover:bg-red-700 ms-1" role="button" {{ $pendaftaran->status=="aktif" ? "disabled" : "" }}>Hapus</a>
                             </td>
                         </tr>
                     @endforeach

@@ -21,8 +21,8 @@
                 </div>
                 <div class="mt-4 flex items-center">
                     <label class="form-control w-full">
-                        <select class="select select-bordered rounded-xl" style="background-color: #F1F1F1" name="permohonan">
-                            <option hidden disabled selected>Permohonan</option>
+                        <select class="select select-bordered rounded-xl" style="background-color: #F1F1F1" name="permohonan" required>
+                            <option value="" hidden disabled selected>Permohonan</option>
                             <option value="Elemen">Elemen</option>
                             <option value="Rusak">Rusak</option>
                             <option value="Hilang">Hilang</option>
