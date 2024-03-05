@@ -14,13 +14,13 @@
             <form method="POST" action="{{ route('storePendaftaran') }}">
                 @csrf
                 <div class="mt-8 flex items-center p-3 rounded-xl" style="background-color: #F1F1F1">
-                        <input type="number" name="nokk" placeholder="Nomor KK" class= focus:outline-none w-full" style="background-color: #F1F1F1" min="16" required />
+                        <input type="number" name="nokk" placeholder="Nomor KK" class="focus:outline-none w-full" style="background-color: #F1F1F1" min="16" required />
                 </div>
                 <div class="mt-3 flex items-center p-3 rounded-xl" style="background-color: #F1F1F1">
-                    <input type="number" name="nik" placeholder="NIK" class= focus:outline-none w-full" style="background-color: #F1F1F1" min="16" required />
+                    <input type="number" name="nik" placeholder="NIK" class="focus:outline-none w-full" style="background-color: #F1F1F1" min="16" required />
                 </div>
                 <div class="mt-3 flex items-center p-3 rounded-xl" style="background-color: #F1F1F1">
-                    <input type="text" name="nama" placeholder="Nama" class= focus:outline-none w-full" style="background-color: #F1F1F1" required />
+                    <input type="text" name="nama" placeholder="Nama" class="focus:outline-none w-full" style="background-color: #F1F1F1" required />
                 </div>
                 <div class="mt-3 flex items-center">
                     <label class="form-control w-full">
