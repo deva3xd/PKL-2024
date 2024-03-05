@@ -13,15 +13,15 @@
             </div>
             <form method="POST" action="{{ route('storePendaftaran') }}">
                 @csrf
-                <div class="mt-8 flex items-center p-3 rounded-xl" style="background-color: #F1F1F1">
-                        <input type="number" name="nokk" placeholder="Nomor KK" class="focus:outline-none w-full" style="background-color: #F1F1F1" min="16" required />
-                </div>
-                <div class="mt-3 flex items-center p-3 rounded-xl" style="background-color: #F1F1F1">
-                    <input type="number" name="nik" placeholder="NIK" class="focus:outline-none w-full" style="background-color: #F1F1F1" min="16" required />
-                </div>
-                <div class="mt-3 flex items-center p-3 rounded-xl" style="background-color: #F1F1F1">
-                    <input type="text" name="nama" placeholder="Nama" class="focus:outline-none w-full" style="background-color: #F1F1F1" required />
-                </div>
+                <label class="mt-8 h-12 rounded-xl input input-bordered flex items-center gap-2" style="background-color: #f1f1f1">
+                    <input type="text" class="grow" placeholder="Nomor KK" name="nokk" min="16" required />
+                </label>
+                <label class="mt-3 h-12 rounded-xl input input-bordered flex items-center gap-2" style="background-color: #f1f1f1">
+                    <input type="text" class="grow" placeholder="NIK" name="nik" min="16" required />
+                </label>
+                <label class="mt-3 h-12 rounded-xl input input-bordered flex items-center gap-2" style="background-color: #f1f1f1">
+                    <input type="text" class="grow" placeholder="Nama" name="nama" required />
+                </label>
                 <div class="mt-3 flex items-center">
                     <label class="form-control w-full">
                         <select class="select select-bordered rounded-xl" style="background-color: #F1F1F1" name="permohonan" required>
