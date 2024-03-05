@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('nokk');
             $table->bigInteger('nik');
+            $table->string('nama');
             $table->string('permohonan');
             $table->string('status');
             $table->timestamps();

@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AuthController::class, 'index'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('postLogin');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/register', [AuthController::class, 'store'])->name('storeRegister');
 
 Route::middleware(['auth', 'PendaftaranMiddleware'])->group(function() {
     Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran');

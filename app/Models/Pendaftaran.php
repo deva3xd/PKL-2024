@@ -12,6 +12,7 @@ class Pendaftaran extends Model
     protected $fillable = [
         'nokk',
         'nik',
+        'nama',
         'permohonan',
         'status'
     ];

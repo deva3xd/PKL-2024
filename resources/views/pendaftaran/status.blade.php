@@ -15,6 +15,7 @@
                         <th>NO.</th>
                         <th>Nomor KK</th>
                         <th>NIK</th>
+                        <th>Nama</th>
                         <th>Permohonan</th>
                         <th>Aksi</th>
                     </tr>
@@ -25,6 +26,7 @@
                             <td>{{ $loop->index + 1 }}</td>
                             <td>{{ $pendaftaran->nokk }}</td>
                             <td>{{ $pendaftaran->nik }}</td>
+                            <td>{{ $pendaftaran->nama }}</td>
                             <td>{{ $pendaftaran->permohonan }}</td>
                             <td>
                                 <a onclick="confirmDelete(this)" data-url="{{route('updateStatus', ['id' => $pendaftaran->id])}}" class="btn btn-sm text-white border-none {{ $pendaftaran->status=="aktif" ? "bg-green-600 hover:bg-green-700" : "" }}" role="button" {{ $pendaftaran->status=="tidak aktif" ? "disabled" : "" }}>Ambil</a>
