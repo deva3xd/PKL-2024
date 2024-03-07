@@ -1,14 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="flex justify-center items-center h-screen w-full" style="background-color: #e8e8e8">
-        <div class="container w-8/12 bg-white flex justify-center items-center h-5/6 rounded-s-3xl rounded-e-3xl shadow-xl">
-            <div class="w-1/2 bg-img flex items-center justify-center rounded-e-3xl rounded-s-3xl h-full">
+    <div class="flex justify-center items-center h-screen w-full" style="background-color: #e3e3e3">
+        <div class="container w-8/12 bg-white flex justify-center items-center h-5/6 rounded-s-3xl rounded-e-3xl shadow-2xl">
+            <div class="w-1/2 bg-img flex items-center justify-center rounded-e-3xl rounded-s-3xl h-full px-10">
                 <div class="text-white">
                     <img src="{{ asset('images/icon.png') }}" width="80px" />
                     <h1 class="mt-4 font-bold text-2xl">Selamat Datang, <br /> Di Aplikasi Si Pandu Resik</h1>
-                    <h2 class="mt-2 font-medium text-lg">Sistem Informasi Pelayanan <br /> Administrasi Kependudukan
-                        <br />Registrasi Ktp-El
+                    <h2 class="mt-2 font-medium text-lg">Sistem Informasi Pelayanan Administrasi <br />Kependudukan Registrasi Ktp-El
                     </h2>
                 </div>
             </div>
@@ -34,8 +33,7 @@
                         <button type="submit"
                             class="btn border-none mt-5 p-4 rounded-xl text-white w-full bg-blue-700 hover:bg-blue-800 font-bold ">Daftar</button>
                     </form>
-                    <p class="mt-2 text-sm">Sudah punya akun? <a href="{{ route('login') }}" class="text-blue-700">Masuk</a>
-                        Sekarang</p>
+                    <p class="mt-2 text-sm">Sudah punya akun? <a href="{{ route('login') }}" class="text-blue-700">Masuk</a> Sekarang</p>
                 </div>
             </div>
         </div>
