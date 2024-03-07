@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="py-16 px-32 min-h-screen">
+<div class="py-16 px-32 min-h-screen bg-img">
     <a href="{{ route('pendaftaran') }}" class="btn border-none bg-white/30 w-10 flex justify-center rounded-xl p-4 hover:bg-white/20">
         <img src="{{ asset('images/arrow.png') }}" width="10px" />
     </a>

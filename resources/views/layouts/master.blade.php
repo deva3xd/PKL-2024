@@ -15,7 +15,7 @@
         font-family: 'Poppins';
     }
 
-    main {
+    .bg-img {
         background-image: url({{ asset('images/bg.png') }}); 
         background-size: cover;
     }

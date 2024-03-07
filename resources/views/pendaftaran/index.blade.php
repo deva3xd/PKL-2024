@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="flex items-center justify-center h-screen">
+    <div class="flex items-center justify-center h-screen bg-img">
         <div class="bg-white/30 w-1/3 p-10 rounded-3xl border border-white text-black">
             <div class="flex justify-end">
                 <a href="{{ route('logout') }}" class="btn border-none px-3 bg-white rounded-xl hover:bg-slate-300">
