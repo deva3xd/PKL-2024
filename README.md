@@ -8,12 +8,13 @@ Website Sistem Informasi Pelayanan Administrasi Kependudukan Registrasi Ktp-El
 
 # Installasi
 - clone
-- masuk ke directory
+- masuk directory
 - composer update
 - npm i
 - rename .env.example ke .env
 - isi file .env
-- migrate database menggunakan perintah "php artisan migrate"
+- php artisan key:generate
+- php artisan migrate
 
 ## Cara Menjalankan
 
