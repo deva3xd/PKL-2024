@@ -14,10 +14,16 @@
             <form method="POST" action="{{ route('storePendaftaran') }}">
                 @csrf
                 <label class="mt-5 h-12 rounded-xl input input-bordered flex items-center gap-2" style="background-color: #f1f1f1">
-                    <input type="text" class="grow" placeholder="Nomor KK" name="nokk" min="16" required />
+                    <input type="text" class="grow" placeholder="Nomor KK" name="nokk" required />
+                    @error('nokk')
+                        <img src="{{ asset('images/error.png') }}" width="25px" />
+                    @enderror
                 </label>
                 <label class="mt-3 h-12 rounded-xl input input-bordered flex items-center gap-2" style="background-color: #f1f1f1">
-                    <input type="text" class="grow" placeholder="NIK" name="nik" min="16" required />
+                    <input type="text" class="grow" placeholder="NIK" name="nik" required />
+                    @error('nik')
+                        <img src="{{ asset('images/error.png') }}" width="25px" />
+                    @enderror
                 </label>
                 <label class="mt-3 h-12 rounded-xl input input-bordered flex items-center gap-2" style="background-color: #f1f1f1">
                     <input type="text" class="grow" placeholder="Nama Lengkap" name="nama" required />
@@ -33,9 +39,7 @@
                         </select>
                     </label>
                 </div>
-                
                 <input type="hidden" name="status" value="aktif" />
-                
                 <button type="submit" class="btn border-none mt-5 p-4 rounded-xl text-white w-full bg-orange-500 hover:bg-orange-600 font-bold text-1xl">Daftar</button>
             </form>
             <a href="{{ route('status') }}" class="btn border-none mt-3 p-4 rounded-xl text-white w-full bg-blue-700 hover:bg-blue-800 font-bold text-1xl">Lihat Status Pendaftaran</a>

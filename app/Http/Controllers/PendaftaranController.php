@@ -21,8 +21,8 @@ class PendaftaranController extends Controller
     public function store(Request $request)
     {
         $validateData = validator($request->all(), [
-            'nokk' => 'required|string|max:255',
-            'nik' => 'required|string|max:255',
+            'nokk' => 'required|string|min:16|max:16',
+            'nik' => 'required|string|min:16|max:16',
             'nama' => 'required|string|max:255',
             'permohonan' => 'required|string|max:255',
             'status' => 'required|string|max:255',
